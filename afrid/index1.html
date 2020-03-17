@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Weather application</title>
+    <link rel="stylesheet" href="font/Rimouski.css" > 
+  <link rel="stylesheet" href="style1.css" id="style1">
+    
+    <script type="text/javascript">
+      function active()
+        {
+            var searchBar=document.getElementById('searchBar');
+            if(searchBar.value=='city name....'){
+              searchBar.value='';
+                searchBar.placeholder='search..'}
+            //week();
+        }
+        
+        
+      function inactive()
+        {
+            var searchBar=document.getElementById('searchBar');
+            if(searchBar.value==''){
+              searchBar.value='city name....';
+                searchBar.placeholder=''}
+        }
+        
+        
+      function week()
+        {  var s=document.getElementById('list');
+           
+            for(var i=0; i<7; i++){
+	           var optionDate = dayAbbrv(i);
+                var opt=document.createElement('option'); 
+                opt.text=optionDate;
+                opt.value=""+i+"";
+                //console.log(optionDate);
+	            s.appendChild(opt);}
+           /* var option = document.createElement("option");
+option.text = "Text";
+option.value = "myvalue";
+var select = document.getElementById("list");
+select.appendChild(option);*/
+         var optionDate = '7 days weather';
+                var opt=document.createElement('option'); 
+                opt.text=optionDate;
+                opt.value=""+7+"";
+                //console.log(optionDate);
+	            s.appendChild(opt);
+        }
+    
+     function dayAbbrv(day)
+        {
+             var d = new Date();
+              var n = d.getDay();
+              future = day + n;
+              switch (future) {
+                case 0:
+                case 7:
+                  day = "Sunday";
+                  break;
+                case 1:
+                case 8:
+                  day = "Monday";
+                  break;
+                case 2:
+                case 9:
+                  day = "Tuesday";
+                  break;
+                case 3:
+                case 10:
+                  day = "Wednesday";
+                  break;
+                case 4:
+                case 11:
+                  day = "Thursday";
+                  break;
+                case 5:
+                case 12:
+                  day = "Friday";
+                  break;
+                case 6:
+                  day = "Saturday";
+              }
+              return day;
+        }
+        
+        
+        
+        
+    </script>
+</head>
+<body onload="week()">
+    <h1 class="underline"><center>Weather Application</center></h1>
+        <form name="Details">
+           <center>
+               <input type="text" id="searchBar" placeholder="" value="city name...." maxlength="50" autocomplete="on" onMouseDown="active()" onBlur="inactive()" /><button type="button" onClick="process()" >Go!</button></center>
+            
+            
+            <center>
+            <div class="select1">
+            <select name="list" id="list" >
+            
+               
+              </select>
+            </div>
+            </center>
+                        
+        </form>
+    <div class="container1">
+   
+   <div class="container2">
+        <div class="app-title1">
+            <p></p>
+        </div>
+        <div class="weather-container1">
+            <div class="weather-icon1"> 
+            </div>
+        </div>
+        <div class="temperature-value1"><p></p></div>
+        <div class="temperature-description1">
+            <p></p>
+        </div>
+        <div class="day1">
+            <p></p>
+        </div>
+      
+        
+    </div>
+    <div class="container2">
+        <div class="app-title2">
+            <p></p>
+        </div>
+        <div class="weather-container2">
+            <div class="weather-icon2">
+            </div>
+        </div>
+        <div class="temperature-value2"><p></p></div>
+        <div class="temperature-description2">
+            <p></p>
+        </div>
+        <div class="day2">
+            <p></p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="app-title3">
+            <p></p>
+        </div>
+        <div class="weather-container3">
+            <div class="weather-icon3">
+            </div>
+        </div>
+        <div class="temperature-value3"><p></p></div>
+        <div class="temperature-description3">
+                <p></p>
+        </div>
+        <div class="day3">
+            <p></p>
+        </div>
+     
+        
+    </div>
+         <div class="container2">
+        <div class="app-title0">
+            <p></p>
+        </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+            </div>
+        </div>
+        <div class="temperature-value"><p></p></div>
+        <div class="temperature-description">
+                <p></p>
+        </div>
+         <div class="dayc">
+            <p></p>
+        </div>
+      
+     <!--   <div class="location"><p></p></div>  -->
+        
+    </div>
+
+    <div class="container2">
+        <div class="app-title4">
+            <p></p>
+        </div>
+        <div class="weather-container4">
+            <div class="weather-icon4"></div>
+        </div>
+        <div class="temperature-value4"><p></p></div>
+        <div class="temperature-description4">
+                <p></p>
+        </div>
+        <div class="day4">
+            <p></p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="app-title5">
+            <p></p>
+        </div>
+        <div class="weather-container5">
+            <div class="weather-icon5"></div>
+        </div>
+        <div class="temperature-value5"><p></p></div>
+        <div class="temperature-description5">
+                <p></p>
+        </div>
+        <div class="day5">
+            <p></p>
+        </div>
+      
+    </div>
+     <div class="container2">
+        <div class="app-title6">
+            <p></p>
+        </div>
+        <div class="weather-container6">
+            <div class="weather-icon6"></div>
+        </div>
+        <div class="temperature-value6"><p></p></div>
+        <div class="temperature-description6">
+                <p></p>
+        </div>
+        <div class="day6">
+            <p></p>
+        </div>
+      
+    </div>
+  </div>
+
+  <center><a href="/hello"><button class="btn dashboard"  >&laquo; DashBoard </button></a></center>
+
+    
+     <!-- <h1 class="underline2">Feedback :</h1>
+ <form  action = "https://localhost:9000/weather.html" method = "POST">
+
+   <div class="stars" data-rating="0">
+         <input type="text"  name="feedbar" class="feed-control" placeholder="Feedback....." maxlength="50" autocomplete="on">
+        
+        <span class="star" ></span>
+        <span class="star" ></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+         
+        <input type="text"  name="starbar" class="star-control" placeholder="*/5" maxlength="1" autocomplete="on">
+
+    </div>
+       
+    <center><button type="newbutton" onClick="submit()" >Submit</button></center>
+       
+</form>
+     -->
+    
+    <script src="script2.js"></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg5_Xh191cjyHkMUo7xVl7F6K3mHdqZN4&callback=initMap&libraries=places" type="text/javascript"></script>  
+    </body>
+   
+</html>
+        
