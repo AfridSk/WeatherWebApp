@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Admin's Page</title>
+        <!-- <link rel="stylesheet" href="style2.css" id="style2"> -->
+        <style>
+            body{
+    background: #1C92D2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F2FCFE, #1C92D2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F2FCFE, #1C92D2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+button{
+    background: none;
+    color: rgb(199, 71, 142);
+    width: 200px;
+    height: 40px;
+    border: 2px solid #2904e1;
+    font-size: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 30px;
+    cursor: pointer;
+}
+table{
+    width: 70vw;
+    margin:auto;
+    table-layout: fixed;
+   
+    
+  }
+  table, td, td{
+      color: black;
+      border-collapse: collapse;
+      border: 1px solid black;
+      text-align: center;
+      font-family: Arial;
+  }
+  th{
+      font-size:20px;
+      padding: 17px;
+      background:rgb(199, 71, 142);
+    }
+    td{
+        padding: 17px 20px;
+        font-size:17px;
+    }
+
+.underline2{
+   
+    font-size: 1.5rem;
+    height: 20px;
+}
+.underline3{
+   margin-top: 20px;
+    font-size: 1.5rem;
+    height: 20px;
+}
+tr:nth-child(even){background-color:blue }
+tr:nth-child(odd){background-color:cornflowerblue }
+.table.sticky th{
+    position: sticky;
+    top: 0;
+}
+
+.scrolltable{
+    margin-top: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 500px;
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+            </style>
+    </head>
+    <body>
+        <center><h class="underline2">DashBoard</h> </center>
+      <h class="underline3">Users FeedBack Table</h>
+    <div class="scrolltable">
+        <table class="table sticky">
+            <thead>
+               <th>Emp_ID</th> 
+              <th>username</th> 
+              <th>rating</th>
+              <th>feedback</th>
+              <th>LogInTime</th> 
+              
+            </thead>
+           
+            <% for(var i = 0; i < users.rows.length; i++) { %>
+               
+                    <tr> 
+                        <td><%= users.rows[i].emp_id %></td> 
+                    <td><%= users.rows[i].username %></td> 
+                    <td><%= users.rows[i].stars%></td> 
+                    <td >  <%= users.rows[i].feed %></td>
+                    <td><%= users.rows[i].logintime %></td> 
+                    </tr>
+            
+             <% } %> 
+                
+     </table>
+     </div>
+        
+        <center> <a href="index1.html"><button type="button" onClick="process()" >visit weatherGo! &raquo;</button></a></center>
+    </body>
+</html>
